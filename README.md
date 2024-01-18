@@ -1,5 +1,5 @@
 # Automatizētā pieslēgšanās RTU sistēmām
-![RTU_logo](https://github.com/patriksgrancarovs/ortus-automatizacija/assets/84973391/0998ec72-5b34-443c-92e9-f45e385cfea5)
+![RTU_logo](https://github.com/patriksgrancarovs/ortus-automatizacija/assets/84973391/488760fb-599a-4027-9fcf-8019ced6b6b3)
 
 ## Projekta uzdevums
 
@@ -17,7 +17,7 @@ Lai izmantotu šo programmatūru, jāielādē AutoRTU.exe programma un jāpalai�
 
 ## Video ar programmas darbību
 
-links
+
 
 ## Autori
 
