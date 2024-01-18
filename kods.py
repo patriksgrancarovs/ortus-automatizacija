@@ -1,4 +1,4 @@
-import os
+import os, sys
 import time
 
 from selenium import webdriver
@@ -121,10 +121,11 @@ while (True):
         os.remove("datne.xlsx")
         print("\nDatne tika dzēsta, palaidiet programmu atkārtoti, lai atjaunotu datus!")
         wait = input("Nospiediet jebkuru taustiņu, lai apturētu programmu.")
-        os._exit(0)
+        print("\nUz redzēšanos!")
+        sys.exit()
 
     elif inputs == "5":
-        os._exit(0)
-
+        print("\nUz redzēšanos!")
+        sys.exit()
     else:
         print("\nKļūda, mēģiniet vēlreiz.")
