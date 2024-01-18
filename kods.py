@@ -15,39 +15,37 @@ if os.path.exists("datne.xlsx") == False:
 
     ws["A2"] = "ORTUS"
     ws["B1"] = "Lietotājvārds"
-    ws["C1"] = "Parole"
-    ws["D1"] = "Novirziens"
-    ws["E1"] = "Kurss"
-    ws["F1"] = "Grupa"
+    ws["C1"] = "Novirziens"
+    ws["D1"] = "Kurss"
+    ws["E1"] = "Grupa"
 
     ws["B2"] = input("ORTUS lietotājvārds: ")
-    ws["C2"] = input("Parole: ")
-
-    print("\nNākamā sadaļa paredzēta Jūsu grafika automātiskai atvēršanai.")
-    ws["D2"] = input("Programmas kods (piemēram, RDBD0): ")
-    ws["E2"] = input("Kurss: ")
-    ws["F2"] = input("Grupa: ")
+    ws["C2"] = input("Programmas kods (piemēram, RDBD0): ")
+    ws["D2"] = input("Kurss: ")
+    ws["E2"] = input("Grupa: ")
 
     wb.save(filename="datne.xlsx")
 
 wb = load_workbook("datne.xlsx")
 ws = wb.active
+parole = input("ORTUS parole: ")
+os.system('cls')
 
 ortus = "https://id2.rtu.lv/openam/UI/Login?module=LDAP&locale=lv"
 estudijas = "https://id2.rtu.lv/openam/UI/Login?locale=lv&goto=https%3A%2F%2Festudijas.rtu.lv"
 nodarbibas = "https://nodarbibas.rtu.lv"
 
 ortus_name = ws["B2"].value
-ortus_pass = ws["C2"].value
-novirziens = ws["D2"].value
-kurss = ws["E2"].value
-grupa = ws["F2"].value
+novirziens = ws["C2"].value
+kurss = ws["D2"].value
+grupa = ws["E2"].value
 
 while (True):
     print("\nKurai saitei vēlaties pieslēgties? Lūdzu ievadiet attiecīgo ciparu!")
     inputs = input("ORTUS - 1 \nE-studijas - 2 \nNodarbību grafiks - 3 \nDzēst vai pārrakstīt datus - 4 \nApturēt programmu - 5 \n")
 
     if inputs == "1":
+        os.system('cls')
         service = Service()
         option = webdriver.ChromeOptions()
         option.add_experimental_option('excludeSwitches', ['enable-logging'])
@@ -61,11 +59,12 @@ while (True):
         username = driver.find_element(By.ID, "IDToken1")
         username.send_keys(str(ortus_name))
         password = driver.find_element(By.ID, "IDToken2")
-        password.send_keys(str(ortus_pass))
+        password.send_keys(str(parole))
         button = driver.find_element(By.NAME, "Login.Submit")
         button.click()
 
     elif inputs == "2":
+        os.system('cls')
         service = Service()
         option = webdriver.ChromeOptions()
         option.add_experimental_option('excludeSwitches', ['enable-logging'])
@@ -79,11 +78,12 @@ while (True):
         username = driver.find_element(By.ID, "IDToken1")
         username.send_keys(str(ortus_name))
         password = driver.find_element(By.ID, "IDToken2")
-        password.send_keys(str(ortus_pass))
+        password.send_keys(str(parole))
         button = driver.find_element(By.NAME, "Login.Submit")
         button.click()
 
     elif inputs == "3":
+        os.system('cls')
         service = Service()
         option = webdriver.ChromeOptions()
         option.add_experimental_option('excludeSwitches', ['enable-logging'])
@@ -114,14 +114,17 @@ while (True):
         element.send_keys(Keys.ENTER)
 
     elif inputs == "4":
+        os.system('cls')
         os.remove("datne.xlsx")
         print("\nDatne tika dzēsta, lūdzu palaidiet programmu vēlreiz, lai atjaunotu savus datus (variet droši aiztaisīt logu)!")
         time.sleep(2)
         sys.exit()
 
     elif inputs == "5":
+        os.system('cls')
         print("\nUz redzēšanos (variet droši aiztaisīt logu)!")
         time.sleep(2)
         sys.exit()
     else:
+        os.system('cls')
         print("\nKļūda, lūdzu mēģiniet vēlreiz.")
