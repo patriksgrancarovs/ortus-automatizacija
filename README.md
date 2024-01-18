@@ -20,7 +20,7 @@ Izmantotās pamatbibliotēkas
 
 Lai izmantotu šo programmatūru, jāielādē AutoRTU.exe programma un jāpalaiž, nav svarīga tās atrašanās vieta datorā, taču atrašanās vietā tiks izveidota Excel datne ar lietotāja datiem. Tālāk būs nepieciešams ievadīt savu ORTUS lietotājvārdu un paroli, kā arī jānorāda jūsu programmas kods, kurss un grupa. Pēc tam variet izvēlēties, kurai sistēmai vēlaties pieslēgties. Programma automātiski atvērs pārlūku un pieslēgsies izvēlētajai sistēmai. Var pieslēgties vairākām sistēmām secīgi. Pēc darba beigšanas var nospiest pogu **4** lai izdzēstu lietotāja datus, vai **5** lai beigtu darbu saglabājot lietotāja datus. Piezīme: programma paroli nesaglabā drošības apsvērumu dēļ, tā katru reizi no jauna jāieraksta restartējot programmu.
 
-## Video ar [programmas darbību](https://www.youtube.com/watch?v=udea_gXEAQE)
+# Video ar [programmas darbību](https://www.youtube.com/watch?v=udea_gXEAQE)
 
 ## Autori
 - Patriks Grančarovs
