@@ -21,6 +21,6 @@ Lai izmantotu šo programmatūru, jāielādē AutoRTU.exe programma un jāpalai�
 
 
 ## Autori
+- Patriks Grančarovs
+- Jurģis Pāvulītis
 
-Jurģis Pāvulītis
-Patriks Grančarovs
