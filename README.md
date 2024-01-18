@@ -3,7 +3,7 @@
 
 ## Projekta uzdevums
 
-Šis projekts ir izstrādāts, lai atvieglotu lietotājam pieslēgties RTU sistēmām. Tas ietver ORTUS, E-studiju un nodarbību grafika atvēršanu.
+Šis projekts ir izstrādāts, lai atvieglotu lietotāja pieslēgšanos RTU sistēmām. Tas ietver ORTUS, E-studiju un nodarbību grafika atvēršanu.
 
 ## Izmantotās Python bibliotēkas un to izmantošanas iemesli
 
@@ -13,12 +13,13 @@ Projekts ir izstrādāts Python valodā un izmanto Selenium un Openpyxl bibliot�
 
 Izmantotās pamatbibliotēkas
 - **os**: Šo bibliotēku izmantojām, lai Python var darboties ar failu sistēmu, piemēram, lasīt, rakstīt un dzēst failus, kā arī notīrīt termināli.
-- **sys**: Bibliotēka ļauj Python programmai beigt darbību.
+- **sys**: Bibliotēka ļauj Python un .exe programmai sekmīgi beigt darbību.
 - **time**: Šī bibliotēka tiek izmantota, lai darbotos ar laika funkcijām. Tas ļauj Python programmai aizkavēt izpildi.
 
 ## Programmatūras izmantošana
 
-Lai izmantotu šo programmatūru, jāielādē AutoRTU.exe programma un jāpalaiž, nav svarīga tās atrašanās vieta datorā, taču atrašanās vietā tiks izveidota Excel datne ar lietotāja datiem. Tālāk būs nepieciešams ievadīt savu ORTUS lietotājvārdu un paroli, kā arī jānorāda jūsu programmas kods, kurss un grupa. Pēc tam variet izvēlēties, kurai sistēmai vēlaties pieslēgties. Programma automātiski atvērs pārlūku un pieslēgsies izvēlētajai sistēmai. Var pieslēgties vairākām sistēmām secīgi. Pēc darba beigšanas var nospiest pogu **4** lai izdzēstu lietotāja datus, vai **5** lai beigtu darbu saglabājot lietotāja datus. Piezīme: programma paroli nesaglabā drošības apsvērumu dēļ, tā katru reizi no jauna jāieraksta restartējot programmu.
+Lai izmantotu šo programmatūru, jāielādē AutoRTU.exe programma un jāpalaiž, nav svarīga tās atrašanās vieta datorā, taču atrašanās vietā tiks izveidota Excel datne ar lietotāja datiem. Tālāk būs nepieciešams ievadīt savu ORTUS lietotājvārdu un paroli, kā arī jānorāda jūsu programmas kods, kurss un grupa. Pēc tam variet izvēlēties, kurai sistēmai vēlaties pieslēgties. Programma automātiski atvērs pārlūku un pieslēgsies izvēlētajai sistēmai. Var pieslēgties vairākām sistēmām secīgi. Pēc darba beigšanas var nospiest pogu **4** lai izdzēstu lietotāja datus, vai **5** lai beigtu darbu saglabājot lietotāja datus.
+Piezīme: programma paroli nesaglabā drošības apsvērumu dēļ, tā katru reizi no jauna jāieraksta restartējot programmu.
 
  **[Video ar programmas darbību](https://www.youtube.com/watch?v=udea_gXEAQE)**
 
