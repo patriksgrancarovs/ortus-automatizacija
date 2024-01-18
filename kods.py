@@ -1,5 +1,4 @@
-import os, sys
-import time
+import os, sys, time
 
 from selenium import webdriver
 from selenium.webdriver import Keys
@@ -11,9 +10,7 @@ from openpyxl import Workbook, load_workbook
 wb = Workbook()
 ws = wb.active
 
-DATNE = "datne.xlsx"
-
-if os.path.exists(DATNE) == False:
+if os.path.exists("datne.xlsx") == False:
     print ("\nDatne nav atrasta, lūdzu ievadiet savus datus (šo procesu vairs nebūs jāatkārto).")
 
     ws["A2"] = "ORTUS"
@@ -23,17 +20,17 @@ if os.path.exists(DATNE) == False:
     ws["E1"] = "Kurss"
     ws["F1"] = "Grupa"
 
-    ws["B2"] = input("Ievadiet ORTUS lietotājvārdu: ")
-    ws["C2"] = input("Ievadiet paroli: ")
+    ws["B2"] = input("ORTUS lietotājvārds: ")
+    ws["C2"] = input("Parole: ")
 
-    print("\nNākamā sadaļa paredzēta grafikam.")
-    ws["D2"] = input("Ievadiet savas programmas kodu (piemēram, RDBD0): ")
-    ws["E2"] = input("Ievadiet kursu: ")
-    ws["F2"] = input("Ievadiet grupu: ")
+    print("\nNākamā sadaļa paredzēta Jūsu grafika automātiskai atvēršanai.")
+    ws["D2"] = input("Programmas kods (piemēram, RDBD0): ")
+    ws["E2"] = input("Kurss: ")
+    ws["F2"] = input("Grupa: ")
 
-    wb.save(filename=DATNE)
+    wb.save(filename="datne.xlsx")
 
-wb = load_workbook(DATNE)
+wb = load_workbook("datne.xlsx")
 ws = wb.active
 
 ortus = "https://id2.rtu.lv/openam/UI/Login?module=LDAP&locale=lv"
@@ -46,10 +43,9 @@ novirziens = ws["D2"].value
 kurss = ws["E2"].value
 grupa = ws["F2"].value
 
-print("\nKur vēlaties pieslēgties? (ievadiet attiecīgo ciparu)")
-
 while (True):
-    inputs = input("ORTUS - 1 \nE-studijas - 2 \nNodarbību grafiks - 3 \nPārrakstīt datus - 4 \nApturēt programmu - 5 \n")
+    print("\nKurai saitei vēlaties pieslēgties? Lūdzu ievadiet attiecīgo ciparu!")
+    inputs = input("ORTUS - 1 \nE-studijas - 2 \nNodarbību grafiks - 3 \nDzēst vai pārrakstīt datus - 4 \nApturēt programmu - 5 \n")
 
     if inputs == "1":
         service = Service()
@@ -119,13 +115,13 @@ while (True):
 
     elif inputs == "4":
         os.remove("datne.xlsx")
-        print("\nDatne tika dzēsta, palaidiet programmu atkārtoti, lai atjaunotu datus!")
-        wait = input("Nospiediet jebkuru taustiņu, lai apturētu programmu.")
-        print("\nUz redzēšanos!")
+        print("\nDatne tika dzēsta, lūdzu palaidiet programmu vēlreiz, lai atjaunotu savus datus (variet droši aiztaisīt logu)!")
+        time.sleep(2)
         sys.exit()
 
     elif inputs == "5":
-        print("\nUz redzēšanos!")
+        print("\nUz redzēšanos (variet droši aiztaisīt logu)!")
+        time.sleep(2)
         sys.exit()
     else:
-        print("\nKļūda, mēģiniet vēlreiz.")
+        print("\nKļūda, lūdzu mēģiniet vēlreiz.")
