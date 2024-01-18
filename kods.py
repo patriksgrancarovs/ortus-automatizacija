@@ -5,12 +5,15 @@ from selenium import webdriver
 from selenium.webdriver import Keys
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
 
 from openpyxl import Workbook, load_workbook
 wb = Workbook()
 ws = wb.active
 
-if os.path.exists("datne.xlsx") == False:
+DATNE = "datne.xlsx"
+
+if os.path.exists(DATNE) == False:
     print ("\nDatne nav atrasta, lūdzu ievadiet savus datus (šo procesu vairs nebūs jāatkārto).")
 
     ws["A2"] = "ORTUS"
@@ -28,9 +31,9 @@ if os.path.exists("datne.xlsx") == False:
     ws["E2"] = input("Ievadiet kursu: ")
     ws["F2"] = input("Ievadiet grupu: ")
 
-    wb.save(filename="datne.xlsx")
+    wb.save(filename=DATNE)
 
-wb = load_workbook("datne.xlsx")
+wb = load_workbook(DATNE)
 ws = wb.active
 
 ortus = "https://id2.rtu.lv/openam/UI/Login?module=LDAP&locale=lv"
@@ -51,7 +54,9 @@ while (True):
     if inputs == "1":
         service = Service()
         option = webdriver.ChromeOptions()
+        option.add_experimental_option('excludeSwitches', ['enable-logging'])
         option.add_experimental_option("detach", True)
+        option.add_argument("--log-level=3")
         driver = webdriver.Chrome(service=service, options=option)
         driver.get(ortus)
         driver.maximize_window()
@@ -67,7 +72,9 @@ while (True):
     elif inputs == "2":
         service = Service()
         option = webdriver.ChromeOptions()
+        option.add_experimental_option('excludeSwitches', ['enable-logging'])
         option.add_experimental_option("detach", True)
+        option.add_argument("--log-level=3")
         driver = webdriver.Chrome(service=service, options=option)
         driver.get(estudijas)
         driver.maximize_window()
@@ -83,7 +90,9 @@ while (True):
     elif inputs == "3":
         service = Service()
         option = webdriver.ChromeOptions()
+        option.add_experimental_option('excludeSwitches', ['enable-logging'])
         option.add_experimental_option("detach", True)
+        option.add_argument("--log-level=3")
         driver = webdriver.Chrome(service=service, options=option)
         driver.get(nodarbibas)
         driver.maximize_window()
@@ -111,10 +120,11 @@ while (True):
     elif inputs == "4":
         os.remove("datne.xlsx")
         print("\nDatne tika dzēsta, palaidiet programmu atkārtoti, lai atjaunotu datus!")
-        exit()
+        wait = input("Nospiediet jebkuru taustiņu, lai apturētu programmu.")
+        os._exit(0)
 
     elif inputs == "5":
-        exit()
+        os._exit(0)
 
     else:
         print("\nKļūda, mēģiniet vēlreiz.")
