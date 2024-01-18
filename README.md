@@ -1,5 +1,6 @@
 # Automatizētā pieslēgšanās RTU sistēmām
-![RTU_logo](https://github.com/patriksgrancarovs/ortus-automatizacija/assets/84973391/488760fb-599a-4027-9fcf-8019ced6b6b3)
+![RTU_logo](https://github.com/patriksgrancarovs/ortus-automatizacija/assets/84973391/03074a15-90ac-4c5f-abd2-f0c74c816b8a)
+
 
 ## Projekta uzdevums
 
